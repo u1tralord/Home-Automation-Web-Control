@@ -1,6 +1,6 @@
 *{
     font-family: segoe ui;
-    font-size: 1.05em;
+    font-size: 4vh;
     font-weight: lighter;
     color: #fff;
 }
@@ -24,7 +24,6 @@ body{
 	display:inline;
 }
 .panel-title{
-    background: #00f;
     height: 10vh;
 	width: 100%;
     background: #201b21;
@@ -53,6 +52,47 @@ body{
 }
 .song-item:active{
 	background: #c95600;
+}
+#simple-player{
+	display: none;
+}
+#simple-player.active-audio{
+    background: #201b21;
+	border-top: 2px solid #2d1f30;
+	display: inline;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 10vh;
+}
+#simple-player button{
+	float: right;
+	width: 10vh;
+	height: 10vh;
+	background: Transparent;
+	border: none;
+	outline: none;
+}
+#simple-player button.play{
+	border: 1px solid red;
+}
+#simple-player button.pause{
+	border: 1px solid green;
+}
+
+#simple-player img{
+	float: left;
+	width: 10vh;
+	height: 10vh;
+}
+#simple-player h1{
+	display:inline;
+	margin-left: 1vh;
+}
+#simple-player h2{
+	display:inline;
+	font-size: 3vh;
+	margin-left: 2vh;
 }
 /*
 .tile-group{

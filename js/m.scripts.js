@@ -2,7 +2,7 @@ window.addEventListener('orientationchange', calculateTileSize);
 calculateTileSize()
 
 var songArea = $("#songs");
-for(var i = 0; i < 2000; i++){
+for(var i = 0; i < 100; i++){
 	var songItem = $("<button class='song-item'></button>").text("Song #"+i);
 	songArea.append(songItem);
 }
@@ -32,4 +32,35 @@ $(".tab-nav").click(function() {
     $( this ).removeClass( "active-panel" );
   });
   $("#"+$(this).attr('linkTo')).addClass("active-panel");
+});
+
+$(".song-item").click(function(){
+	var music = document.getElementById("audio-handler");
+	var albumArt = $("#simple-player > img");
+	var songText = $("#simple-player > h1");
+	var artistText = $("#simple-player > h2");
+	var playPauseButton = $("#simple-player > button");
+	
+	$("#audio-handler > source").attr("src", "res/song.mp3");
+	music.play();
+	
+	
+	albumArt.attr("src", "res/album.jpg");
+	songText.text("Song");
+	artistText.text("Artist");
+	playPauseButton.addClass("pause");
+	playPauseButton.click(function(){
+		if (music.paused) {
+			music.play();
+			$(this).removeClass("play");
+			$(this).addClass("pause");
+		} else {
+			music.pause();
+			$(this).removeClass("pause");
+			$(this).addClass("play");
+		}
+	});
+	
+	//Show the miniplayer
+	$("#simple-player").addClass("active-audio");
 });
