@@ -3,7 +3,21 @@ calculateTileSize()
 
 var songArea = $("#songs");
 for(var i = 0; i < 100; i++){
-	var songItem = $("<button class='song-item'></button>").text("Song #"+i);
+	var optionsButton = $("<button></button>");
+	var albumArt = $("<img/>");
+	var songName = $("<h1></h1>");
+	var artistName = $("<h2></h2>");
+	var songItem = $("<button class='song-item'></button>");
+	
+	albumArt.attr("src", "res/album.jpg");
+	songName.text("Song #"+i);
+	artistName.text("Song #"+i);
+	
+	songItem.append(optionsButton);
+	songItem.append(albumArt);
+	songItem.append(songName);
+	songItem.append(artistName);
+	
 	songArea.append(songItem);
 }
 function calculateTileSize()
@@ -47,6 +61,9 @@ $(".song-item").click(function(){
 	
 	
 	albumArt.attr("src", "res/album.jpg");
+	albumArt.click(function(){
+		$("#simple-player").removeClass("active-audio");
+	});
 	songText.text("Song");
 	artistText.text("Artist");
 	playPauseButton.addClass("pause");

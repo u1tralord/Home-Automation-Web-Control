@@ -49,10 +49,36 @@ body{
 	outline: 1px solid #9f3010;
 	background: #1d2128;
 	border: none;
+	display: inline;
 }
 .song-item:active{
 	background: #c95600;
 }
+.song-item button{
+	float: right;
+	width: 5vh;
+	height: 10vh;
+	background: Transparent;
+	border: none;
+	outline: none;
+}
+.song-item img{
+	float: left;
+	width: 10vh;
+	height: 10vh;
+}
+.song-item h1{
+	float:left;
+	display:inline;
+	margin-left: 1vh;
+}
+.song-item h2{
+	float:left;
+	display:inline;
+	font-size: 3vh;
+	margin-left: 2vh;
+}
+
 #simple-player{
 	display: none;
 }
@@ -92,7 +118,7 @@ body{
 #simple-player h2{
 	display:inline;
 	font-size: 3vh;
-	margin-left: 2vh;
+	margin-left: 1vh;
 }
 /*
 .tile-group{
