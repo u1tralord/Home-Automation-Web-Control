@@ -2,8 +2,12 @@ window.addEventListener('orientationchange', calculateTileSize);
 calculateTileSize()
 
 var songArea = $("#songs");
-for(var i = 0; i < 2000; i++){
-	var optionsButton = $("<button></button>");
+for(var i = 0; i < 100; i++){
+	/*var optionsButton = $("<button><div></div><div></div><div></div></button>").mousedown(function(){
+		$(this).parent().attr("disabled", true);         
+	}).mouseup(function(){
+		$(this).parent().attr("disabled", false);  
+	});
 	var albumArt = $("<img/>");
 	var songName = $("<h1></h1>");
 	var artistName = $("<h2></h2>");
@@ -16,8 +20,12 @@ for(var i = 0; i < 2000; i++){
 	songItem.append(optionsButton);
 	songItem.append(albumArt);
 	songItem.append(songName);
-	songItem.append(artistName);
-	
+	songItem.append(artistName);*/
+	var songItem = $("<div class='song-item'></div>");
+	songItem.append($("<button><div></div><div></div><div></div></button>"));
+	songItem.append($("<img></img>").attr("src", "res/album.jpg"));
+	songItem.append($("<h1></h1>").text("Song #"+i));
+	songItem.append($("<h2></h2>").text("Song #"+i));
 	songArea.append(songItem);
 }
 function calculateTileSize()
