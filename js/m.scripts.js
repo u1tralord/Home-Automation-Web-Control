@@ -1,6 +1,11 @@
 window.addEventListener('orientationchange', calculateTileSize);
 calculateTileSize()
 
+var songArea = $("#songs");
+for(var i = 0; i < 20000; i++){
+	var songItem = $("<div class='song-item'></div>").text("Song #"+i);
+	songArea.append(songItem);
+}
 function calculateTileSize()
 {
     var bodyWidth = $(".panel-body").first().width();

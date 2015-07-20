@@ -10,47 +10,18 @@
     </head>
     <body ontouchstart="">
         <div id="control-panel">
-            <div class="panel-screen active-panel" id="menu-screen">
-                <div class="panel-titlebar">
-                    <button linkTo="menu-screen" class="back-button tab-nav">
-                        <div class="hamburger">
-                            <div class="hamburger-slice"></div>
-                            <div class="hamburger-slice"></div>
-                            <div class="hamburger-slice"></div>
-                        </div>
-                    </button>
-                    <div class="panel-title">
-                        <h1>Home</h1>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <div class="tile-group">
-                        <button linkTo="music-screen" class="tile tab-nav">Music</button>
-                        <button linkTo="home" class="tile tab-nav">Home</button>
-                        <button linkTo="home" class="tile tab-nav">Home</button>
-                        <button linkTo="home" class="tile tab-nav">Home</button>
-                        <button linkTo="home" class="tile tab-nav">Home</button>
-                        <button linkTo="home" class="tile tab-nav">Home</button>
-                    </div>
-                </div>
-            </div>
-			<div class="panel-screen" id="music-screen">
-				<div class="panel-titlebar">
-                    <button linkTo="menu-screen" class="back-button tab-nav" linkTo="menu-screen">
-                        <div class="hamburger">
-                            <div class="hamburger-slice"></div>
-                            <div class="hamburger-slice"></div>
-                            <div class="hamburger-slice"></div>
-                        </div>
-                    </button>
-                    <div class="panel-title">
-                        <h1>Music</h1>
-                    </div>
-                </div>
+		
+		
+			<div class="panel active-panel">
+				<div class="panel-title">
+					<h1>Music</h1>
+				</div>
 				<div class="panel-body">
-					<p>CONTENT!</p>
+					<div id="songs"></div>
 				</div>
 			</div>
+			
+			
         </div>
     </body>
     <script src="js/fastclick.js"></script>
