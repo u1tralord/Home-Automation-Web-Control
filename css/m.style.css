@@ -26,8 +26,11 @@ body{
 .panel-title{
     background: #00f;
     height: 10vh;
+	width: 100%;
     background: #201b21;
 	border-bottom: 2px solid #2d1f30;
+	position: fixed;
+	top: 0;
 }
 .panel-title h1{
 	display: inline-block;
