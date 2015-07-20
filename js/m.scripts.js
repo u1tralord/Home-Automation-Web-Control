@@ -42,6 +42,7 @@ $(".song-item").click(function(){
 	var playPauseButton = $("#simple-player > button");
 	
 	$("#audio-handler > source").attr("src", "res/song.mp3");
+	music.currentTime = 0;
 	music.play();
 	
 	
