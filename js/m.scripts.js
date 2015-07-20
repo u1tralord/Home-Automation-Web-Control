@@ -2,7 +2,7 @@ window.addEventListener('orientationchange', calculateTileSize);
 calculateTileSize()
 
 var songArea = $("#songs");
-for(var i = 0; i < 100; i++){
+for(var i = 0; i < 2000; i++){
 	var optionsButton = $("<button></button>");
 	var albumArt = $("<img/>");
 	var songName = $("<h1></h1>");
