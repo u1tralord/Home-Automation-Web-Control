@@ -86,7 +86,6 @@ body{
 	height: 10vh;
 }
 .song-item h1{
-	outline: 1px solid green;
 	float: left;
 	font-size: 3vh;
 	display: block;
@@ -94,7 +93,6 @@ body{
 	left: 10vh;
 }
 .song-item h2{
-	outline: 1px solid green;
 	float: left;
 	font-size: 2vh;
 	display: block;
