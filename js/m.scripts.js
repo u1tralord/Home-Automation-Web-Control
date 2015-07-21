@@ -3,29 +3,15 @@ calculateTileSize()
 
 var songArea = $("#songs");
 for(var i = 0; i < 100; i++){
-	/*var optionsButton = $("<button><div></div><div></div><div></div></button>").mousedown(function(){
-		$(this).parent().attr("disabled", true);         
-	}).mouseup(function(){
-		$(this).parent().attr("disabled", false);  
-	});
-	var albumArt = $("<img/>");
-	var songName = $("<h1></h1>");
-	var artistName = $("<h2></h2>");
-	var songItem = $("<button class='song-item'></button>");
-	
-	albumArt.attr("src", "res/album.jpg");
-	songName.text("Song #"+i);
-	artistName.text("Song #"+i);
-	
-	songItem.append(optionsButton);
-	songItem.append(albumArt);
-	songItem.append(songName);
-	songItem.append(artistName);*/
 	var songItem = $("<div class='song-item'></div>");
 	songItem.append($("<button><div></div><div></div><div></div></button>"));
-	songItem.append($("<img></img>").attr("src", "res/album.jpg"));
-	songItem.append($("<h1></h1>").text("Song #"+i));
-	songItem.append($("<h2></h2>").text("Song #"+i));
+
+	var songInfo = $("<div></div>").addClass("song-info");
+	songInfo.append($("<img></img>").attr("src", "res/album.jpg"));
+	songInfo.append($("<h1></h1></br>").text("Song #" + i));
+	songInfo.append($("<h2></h2>").text("Song #"+ i));
+	songItem.append(songInfo);
+
 	songArea.append(songItem);
 }
 function calculateTileSize()
@@ -56,7 +42,8 @@ $(".tab-nav").click(function() {
   $("#"+$(this).attr('linkTo')).addClass("active-panel");
 });
 
-$(".song-item").click(function(){
+$(".song-item > .song-info").click(function(){
+	$(this).parent().addClass("selected");
 	var music = document.getElementById("audio-handler");
 	var albumArt = $("#simple-player > img");
 	var songText = $("#simple-player > h1");
@@ -74,7 +61,8 @@ $(".song-item").click(function(){
 	});
 	songText.text("Song");
 	artistText.text("Artist");
-	playPauseButton.addClass("pause");
+
+	playPauseButton.addClass("play");
 	playPauseButton.click(function(){
 		if (music.paused) {
 			music.play();

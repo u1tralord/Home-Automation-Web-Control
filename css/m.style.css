@@ -30,6 +30,7 @@ body{
 	border-bottom: 2px solid #2d1f30;
 	position: fixed;
 	top: 0;
+	z-index: 999;
 }
 .panel-title h1{
 	display: inline-block;
@@ -42,46 +43,42 @@ body{
     height: 90vh;
     background-color: #1d2128;
 }
-.song-item-test{
-	width: 100vw;
-	height: 10vh;
-	outline: 1px solid #9f3010;
-	background: #1d2128;
-	border: none;
+#songs{
+	width: 100%;
 }
 .song-item{
-	width: 100%;
+	width: 100vw;
 	height: 10vh;
-	outline: 1px solid #9f3010;
 	background: #1d2128;
-	border: none;
+	outline: 1px solid #9f3010;
 }
-.song-item:active{
+.song-item.selected:active{
 	background: #c95600;
 }
 .song-item button{
 	float: right;
-	width: 8vh;
+	width: 8vw;
 	height: 10vh;
 	background: Transparent;
 	border: none;
-	outline: 1px solid red;
+	outline: none;
+	display: inline;
 }
-.song-item button:active{
+.song-item button div{
+	width: 0.75vh;
+	height: 0.75vh;
+	margin: 0.5vh;
+	border-radius: .5vh;
 	background: #c95600;
 }
 .song-item button:active div{
-	background: #1d2128;
+	background: #e97600;
 }
-/*.song-item:active button:active div{
-	background: #c95600;
-}*/
-.song-item button div{
-	width: 1vh;
-	height: 1vh;
-	margin: .5vh;
-	border-radius: .5vh;
-	background: #c95600;
+.song-item div{
+	float: left;
+	width: 70vw;
+	height: 10vh;
+	display: inline;
 }
 .song-item img{
 	float: left;
@@ -89,15 +86,23 @@ body{
 	height: 10vh;
 }
 .song-item h1{
-	float:left;
-	margin-left: 1vh;
+	outline: 1px solid green;
+	float: left;
 	font-size: 3vh;
+	display: block;
+	position: absolute;
+	left: 10vh;
 }
 .song-item h2{
-	float:left;
-	font-size: 3vh;
-	margin-left: 2vh;
+	outline: 1px solid green;
+	float: left;
+	font-size: 2vh;
+	display: block;
+	clear: both;
+	position: absolute;
+	left: 10vh;
 }
+
 #simple-player{
 	display: none;
 }
